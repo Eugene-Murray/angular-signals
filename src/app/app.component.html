@@ -1,22 +1,32 @@
-<div class="flex flex-col bg-gray-200 dark:bg-gray-200 m-2">
-  <h1 class="text-blue-600/100 dark:text-sky-600/100 underline text-8xl italic mb-8">Signals</h1>
-  <p>Signals are a new way to manage state in Angular applications. 
-    They provide a more declarative and reactive approach to state management, 
-    making it easier to reason about your application's state and how it changes over time.</p>
-
-  <h2 class="mt-8 text-sky-600/100 dark:text-sky-400/100">1. Writable signals - Writable signals provide an API for updating their values directly. Signals may be either writable or read-only.</h2>
-  <p>Count: {{ count() }}</p>
-
-  <h2 class="mt-8 text-sky-600/100 dark:text-sky-400/100">2. Computed signals - Computed signal are read-only signals that derive their value from other signals</h2>
-  <input type="text" [(ngModel)]="searchTerm" class="w-80 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search for user...">
-  <div *ngFor="let person of filteredList()">
-    {{ person.name }} - {{ person.age }}
+<div class="flex">
+  <div class="size-130 flex-none bg-amber-300 h-full">
+    <div class="container bg-gray-50 h-full p-6 max-w-lg">
+      <h1 class="text-3xl text-blue-800">Signals Sandbox</h1>
+      <ul class="mt-6">
+        <li class="text-lg border border-blue-200 p-2 my-4">
+          <a
+            class="text-blue-500 hover:text-blue-300"
+            routerLink="/signals"
+            >Basic Signals</a
+          >
+        </li>
+        <li class="text-lg border border-blue-200 p-2 my-4">
+          <a class="text-blue-500 hover:text-blue-300" routerLink="/signal-store"
+            >Lightweight SignalState</a
+          >
+        </li>
+        <li class="text-lg border border-blue-200 p-2 my-4">
+          <a
+            class="text-blue-500 hover:text-blue-300"
+            routerLink="/signal-state-lightweight"
+            >SignalStore</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
-
-  <h2 class="mt-8 text-sky-600/100 dark:text-sky-400/100">3. Effects - Signals are useful because they notify interested consumers when they change. An effect is an operation that runs whenever one or more signal values change</h2>
-  newCount: {{ newCount }}
-
-
+  <div class="size-100 grow bg-white h-full">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
-<router-outlet />

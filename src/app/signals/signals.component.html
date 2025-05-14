@@ -1,0 +1,20 @@
+<div class="flex flex-col bg-gray-200 dark:bg-gray-200 m-2">
+  <h1 class="text-blue-600/100 dark:text-sky-600/100 underline text-8xl italic mb-8">Basic Signals</h1>
+  <p>Signals are a new way to manage state in Angular applications. 
+    They provide a more declarative and reactive approach to state management, 
+    making it easier to reason about your application's state and how it changes over time.</p>
+
+  <h2 class="mt-8 text-sky-600/100 dark:text-sky-400/100">1. Writable signals - Writable signals provide an API for updating their values directly. Signals may be either writable or read-only.</h2>
+  <p>Count: {{ count() }}</p>
+
+  <h2 class="mt-8 text-sky-600/100 dark:text-sky-400/100">2. Computed signals - Computed signal are read-only signals that derive their value from other signals</h2>
+  <input type="text" [(ngModel)]="searchTerm" class="w-80 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search for user...">
+  <div *ngFor="let person of filteredList()">
+    {{ person.name }} - {{ person.age }}
+  </div>
+
+  <h2 class="mt-8 text-sky-600/100 dark:text-sky-400/100">3. Effects - Signals are useful because they notify interested consumers when they change. An effect is an operation that runs whenever one or more signal values change</h2>
+  newCount: {{ newCount }}
+
+
+</div>
