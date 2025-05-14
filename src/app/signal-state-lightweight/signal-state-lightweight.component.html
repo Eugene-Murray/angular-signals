@@ -1,1 +1,37 @@
-<p>signal-state-lightweight works!</p>
+<div class="flex flex-col bg-gray-200 dark:bg-gray-200 m-2">
+  <h1
+    class="text-blue-600/100 dark:text-sky-600/100 underline text-8xl italic mb-8"
+  >
+    Lightweight SignalState
+  </h1>
+
+  <p>
+    SignalState is a lightweight utility designed for managing signal-based
+    state in a concise and minimalistic manner. It's suitable for managing
+    modest-sized states and can be used directly in components, services, or
+    standalone functions.
+  </p>
+
+  <div class="m-8">
+    <p>Count: {{ state.count() }}</p>
+
+    <button
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+      (click)="increment()"
+    >
+      Increment
+    </button>
+    <button
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+      (click)="decrement()"
+    >
+      Decrement
+    </button>
+    <button
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+      (click)="reset()"
+    >
+      Reset
+    </button>
+  </div>
+</div>
